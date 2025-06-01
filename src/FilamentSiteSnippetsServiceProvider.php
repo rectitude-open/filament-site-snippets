@@ -1,6 +1,8 @@
 <?php
 
-namespace VendorName\Skeleton;
+declare(strict_types=1);
+
+namespace RectitudeOpen\FilamentSiteSnippets;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
@@ -10,17 +12,17 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use RectitudeOpen\FilamentSiteSnippets\Commands\FilamentSiteSnippetsCommand;
+use RectitudeOpen\FilamentSiteSnippets\Testing\TestsFilamentSiteSnippets;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
-use VendorName\Skeleton\Testing\TestsSkeleton;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class FilamentSiteSnippetsServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'skeleton';
+    public static string $name = 'filament-site-snippets';
 
-    public static string $viewNamespace = 'skeleton';
+    public static string $viewNamespace = 'filament-site-snippets';
 
     public function configurePackage(Package $package): void
     {
@@ -36,7 +38,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
                     ->publishConfigFile()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub(':vendor_slug/:package_slug');
+                    ->askToStarRepoOnGitHub('rectitude-open/filament-site-snippets');
             });
 
         $configFileName = $package->shortName();
@@ -80,18 +82,18 @@ class SkeletonServiceProvider extends PackageServiceProvider
         if (app()->runningInConsole()) {
             foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
                 $this->publishes([
-                    $file->getRealPath() => base_path("stubs/skeleton/{$file->getFilename()}"),
-                ], 'skeleton-stubs');
+                    $file->getRealPath() => base_path("stubs/filament-site-snippets/{$file->getFilename()}"),
+                ], 'filament-site-snippets-stubs');
             }
         }
 
         // Testing
-        Testable::mixin(new TestsSkeleton);
+        Testable::mixin(new TestsFilamentSiteSnippets);
     }
 
     protected function getAssetPackageName(): ?string
     {
-        return ':vendor_slug/:package_slug';
+        return 'rectitude-open/filament-site-snippets';
     }
 
     /**
@@ -100,9 +102,9 @@ class SkeletonServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('skeleton', __DIR__ . '/../resources/dist/components/skeleton.js'),
-            Css::make('skeleton-styles', __DIR__ . '/../resources/dist/skeleton.css'),
-            Js::make('skeleton-scripts', __DIR__ . '/../resources/dist/skeleton.js'),
+            // AlpineComponent::make('filament-site-snippets', __DIR__ . '/../resources/dist/components/filament-site-snippets.js'),
+            Css::make('filament-site-snippets-styles', __DIR__ . '/../resources/dist/filament-site-snippets.css'),
+            Js::make('filament-site-snippets-scripts', __DIR__ . '/../resources/dist/filament-site-snippets.js'),
         ];
     }
 
@@ -112,7 +114,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            SkeletonCommand::class,
+            FilamentSiteSnippetsCommand::class,
         ];
     }
 
@@ -146,7 +148,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_skeleton_table',
+            'create_filament-site-snippets_table',
         ];
     }
 }

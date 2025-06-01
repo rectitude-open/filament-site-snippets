@@ -1,28 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "rectitude-open/filament-site-snippets",
+    "description": "This is my package filament-site-snippets",
     "keywords": [
         "filament",
         "filament plugin"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/rectitude-open/filament-site-snippets",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/rectitude-open/filament-site-snippets/issues",
+        "source": "https://github.com/rectitude-open/filament-site-snippets"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Rectitude Open",
+            "email": "open@rectitude.dev",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
@@ -39,13 +37,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "RectitudeOpen\\FilamentSiteSnippets\\": "src/",
+            "RectitudeOpen\\FilamentSiteSnippets\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "RectitudeOpen\\FilamentSiteSnippets\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -65,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "RectitudeOpen\\FilamentSiteSnippets\\FilamentSiteSnippetsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentSiteSnippets": "RectitudeOpen\\FilamentSiteSnippets\\Facades\\FilamentSiteSnippets"
             }
         }
     },

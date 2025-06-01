@@ -1,11 +1,11 @@
-# :package_description
+# This is my package filament-site-snippets
 
 ![Do not use](https://img.shields.io/badge/Under%20development-Don't%20use-red)
-[![Tests](https://github.com/:vendor_slug/:package_slug/actions/workflows/run-tests.yml/badge.svg)](https://github.com/:vendor_slug/:package_slug/actions/workflows/run-tests.yml)
+[![Tests](https://github.com/rectitude-open/filament-site-snippets/actions/workflows/run-tests.yml/badge.svg)](https://github.com/rectitude-open/filament-site-snippets/actions/workflows/run-tests.yml)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%205-brightgreen)](https://phpstan.org/)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/:vendor_slug/:package_slug/pulls)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rectitude-open/filament-site-snippets.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-site-snippets)
+[![Total Downloads](https://img.shields.io/packagist/dt/rectitude-open/filament-site-snippets.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-site-snippets)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/rectitude-open/filament-site-snippets/pulls)
 
 Generate a banner for your package using [Social Image Generator for Open Source packages](https://banners.beyondco.de/)
 
@@ -20,26 +20,26 @@ Resource | Page | Cluster | Migration | Model | Config | View | Localization
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
+composer require rectitude-open/filament-site-snippets
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
+php artisan vendor:publish --tag="filament-site-snippets-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
+php artisan vendor:publish --tag="filament-site-snippets-config"
 ```
 
 Optionally, you can publish the translations using
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-translations"
+php artisan vendor:publish --tag="filament-site-snippets-translations"
 ```
 
 This is the contents of the published config file:
@@ -58,7 +58,7 @@ To use the resource page provided by this package, you need to register it in yo
 ```php
 namespace App\Providers\Filament;
 
-use VendorName\Skeleton\SkeletonPlugin;
+use RectitudeOpen\FilamentSiteSnippets\FilamentSiteSnippetsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -66,7 +66,7 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->plugins([
-                SkeletonPlugin::make()
+                FilamentSiteSnippetsPlugin::make()
             ]);
     }
 }
@@ -92,7 +92,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Rectitude Open](https://github.com/rectitude-open)
 - [All Contributors](../../contributors)
 
 ## License

@@ -1,6 +1,8 @@
 <?php
 
-namespace VendorName\Skeleton\Database\Factories;
+declare(strict_types=1);
+
+namespace RectitudeOpen\FilamentSiteSnippets\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

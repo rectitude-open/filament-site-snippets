@@ -26,5 +26,5 @@
 /tailwind.config.js     export-ignore
 /testbench.yaml         export-ignore
 /UPGRADING.md           export-ignore
-/:package_slug-docker   export-ignore
+/filament-site-snippets-docker   export-ignore
 /dev                    export-ignore
