@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.1.0...v1.2.0) (2025-06-02)
+
+
+### Features
+
+* increase maximum length for content fields in SiteSnippetResource ([e73ebc7](https://github.com/rectitude-open/filament-site-snippets/commit/e73ebc7859adf6711ea5a3f33e843ae0ba571af2))
+
 ## [1.1.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.0.0...v1.1.0) (2025-06-02)
 
 
