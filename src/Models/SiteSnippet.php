@@ -7,6 +7,7 @@ namespace RectitudeOpen\FilamentSiteSnippets\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use RectitudeOpen\FilamentSiteSnippets\FilamentSiteSnippets;
 
 /**
  * @property int $id
@@ -26,4 +27,15 @@ class SiteSnippet extends Model
         'type',
         'description',
     ];
+
+    protected static function booted(): void
+    {
+        static::saved(function (SiteSnippet $snippet) {
+            FilamentSiteSnippets::clearCache($snippet->key);
+        });
+
+        static::deleted(function (SiteSnippet $snippet) {
+            FilamentSiteSnippets::clearCache($snippet->key);
+        });
+    }
 }
