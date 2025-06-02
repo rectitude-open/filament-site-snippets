@@ -6,6 +6,7 @@ namespace RectitudeOpen\FilamentSiteSnippets;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use RectitudeOpen\FilamentSiteSnippets\Resources\SiteSnippetResource;
 
 class FilamentSiteSnippetsPlugin implements Plugin
 {
@@ -16,7 +17,10 @@ class FilamentSiteSnippetsPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        //
+        $panel
+            ->resources([
+                config('filament-site-snippets.filament_resource', SiteSnippetResource::class),
+            ]);
     }
 
     public function boot(Panel $panel): void

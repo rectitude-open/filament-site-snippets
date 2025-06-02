@@ -55,9 +55,9 @@ class FilamentSiteSnippetsServiceProvider extends PackageServiceProvider
             $package->hasTranslations();
         }
 
-        if (file_exists($package->basePath('/../resources/views'))) {
-            $package->hasViews(static::$viewNamespace);
-        }
+        // if (file_exists($package->basePath('/../resources/views'))) {
+        //     $package->hasViews(static::$viewNamespace);
+        // }
     }
 
     public function packageRegistered(): void {}
@@ -65,30 +65,30 @@ class FilamentSiteSnippetsServiceProvider extends PackageServiceProvider
     public function packageBooted(): void
     {
         // Asset Registration
-        FilamentAsset::register(
-            $this->getAssets(),
-            $this->getAssetPackageName()
-        );
+        // FilamentAsset::register(
+        //     $this->getAssets(),
+        //     $this->getAssetPackageName()
+        // );
 
-        FilamentAsset::registerScriptData(
-            $this->getScriptData(),
-            $this->getAssetPackageName()
-        );
+        // FilamentAsset::registerScriptData(
+        //     $this->getScriptData(),
+        //     $this->getAssetPackageName()
+        // );
 
         // Icon Registration
-        FilamentIcon::register($this->getIcons());
+        // FilamentIcon::register($this->getIcons());
 
         // Handle Stubs
-        if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
-                $this->publishes([
-                    $file->getRealPath() => base_path("stubs/filament-site-snippets/{$file->getFilename()}"),
-                ], 'filament-site-snippets-stubs');
-            }
-        }
+        // if (app()->runningInConsole()) {
+        //     foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+        //         $this->publishes([
+        //             $file->getRealPath() => base_path("stubs/filament-site-snippets/{$file->getFilename()}"),
+        //         ], 'filament-site-snippets-stubs');
+        //     }
+        // }
 
         // Testing
-        Testable::mixin(new TestsFilamentSiteSnippets);
+        // Testable::mixin(new TestsFilamentSiteSnippets);
     }
 
     protected function getAssetPackageName(): ?string
@@ -103,8 +103,8 @@ class FilamentSiteSnippetsServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('filament-site-snippets', __DIR__ . '/../resources/dist/components/filament-site-snippets.js'),
-            Css::make('filament-site-snippets-styles', __DIR__ . '/../resources/dist/filament-site-snippets.css'),
-            Js::make('filament-site-snippets-scripts', __DIR__ . '/../resources/dist/filament-site-snippets.js'),
+            // Css::make('filament-site-snippets-styles', __DIR__ . '/../resources/dist/filament-site-snippets.css'),
+            // Js::make('filament-site-snippets-scripts', __DIR__ . '/../resources/dist/filament-site-snippets.js'),
         ];
     }
 
@@ -114,7 +114,7 @@ class FilamentSiteSnippetsServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            FilamentSiteSnippetsCommand::class,
+            // FilamentSiteSnippetsCommand::class,
         ];
     }
 
@@ -148,7 +148,7 @@ class FilamentSiteSnippetsServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_filament-site-snippets_table',
+            'create_site_snippets_table',
         ];
     }
 }

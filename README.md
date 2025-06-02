@@ -46,12 +46,16 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'filament_resource' => RectitudeOpen\FilamentSiteSnippets\Resources\SiteSnippetResource::class,
+    'model' => RectitudeOpen\FilamentSiteSnippets\Models\SiteSnippet::class,
+    'navigation_sort' => 0,
+    'navigation_icon' => 'heroicon-o-puzzle-piece',
 ];
 ```
 
 ## Usage
 
-The package provides a resource page that allows you to view XXXXXXX in your Filament admin panel. 
+The package provides a resource page that allows you to view snippets in your Filament admin panel. 
 
 To use the resource page provided by this package, you need to register it in your Panel Provider first.
 
@@ -92,7 +96,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Rectitude Open](https://github.com/rectitude-open)
+- [Aspirant Zhang](https://github.com/aspirantzhang)
 - [All Contributors](../../contributors)
 
 ## License
