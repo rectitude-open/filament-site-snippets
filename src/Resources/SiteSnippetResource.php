@@ -54,14 +54,14 @@ class SiteSnippetResource extends Resource
                                     Forms\Components\Textarea::make($contentFieldName)
                                         ->label('Content (Plain Text)')
                                         ->required()
-                                        ->maxLength(255)
+                                        ->maxLength(65535)
                                         ->autosize(),
                                 ];
                             case 'html':
                                 return [
                                     Forms\Components\RichEditor::make($contentFieldName)
                                         ->label('Content (HTML)')
-                                        ->maxLength(255)
+                                        ->maxLength(65535)
                                         ->required(),
                                 ];
                             case 'image':
