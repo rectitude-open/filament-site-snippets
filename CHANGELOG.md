@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.2.0...v1.3.0) (2025-06-03)
+
+
+### Features
+
+* add multilingual support for site snippets and update resource labels ([9215ca2](https://github.com/rectitude-open/filament-site-snippets/commit/9215ca29ced49affee318a8e35886b2a8e62517f))
+* update README and composer.json for improved clarity and branding ([fa3f098](https://github.com/rectitude-open/filament-site-snippets/commit/fa3f098725ac3f104e0b814759344f76f5b77a0b))
+
 ## [1.2.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.1.0...v1.2.0) (2025-06-02)
 
 
