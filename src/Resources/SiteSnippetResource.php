@@ -35,9 +35,14 @@ class SiteSnippetResource extends Resource
         return config('filament-site-snippets.navigation_sort', 0);
     }
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-site-snippets::filament-site-snippets.nav.label');
+    }
+
     public static function getNavigationGroup(): ?string
     {
-        return __('menu.nav_group.content');
+        return __('filament-site-snippets::filament-site-snippets.nav.group');
     }
 
     public static function form(Form $form): Form
@@ -52,7 +57,7 @@ class SiteSnippetResource extends Resource
                             case 'text':
                                 return [
                                     Forms\Components\Textarea::make($contentFieldName)
-                                        ->label('Content (Plain Text)')
+                                        ->label(__('filament-site-snippets::filament-site-snippets.field.plain_text'))
                                         ->required()
                                         ->maxLength(65535)
                                         ->autosize(),
@@ -60,14 +65,14 @@ class SiteSnippetResource extends Resource
                             case 'html':
                                 return [
                                     Forms\Components\RichEditor::make($contentFieldName)
-                                        ->label('Content (HTML)')
+                                        ->label(__('filament-site-snippets::filament-site-snippets.field.html'))
                                         ->maxLength(65535)
                                         ->required(),
                                 ];
                             case 'image':
                                 return [
                                     Forms\Components\FileUpload::make($contentFieldName)
-                                        ->label('Image File')
+                                        ->label(__('filament-site-snippets::filament-site-snippets.field.image'))
                                         ->image()
                                         ->disk('public')
                                         ->directory('snippets')
@@ -76,7 +81,7 @@ class SiteSnippetResource extends Resource
                             default:
                                 return [
                                     Forms\Components\Placeholder::make('content_type_notice_' . uniqid())
-                                        ->content('Please select a content type to enter content.'),
+                                        ->content(__('filament-site-snippets::filament-site-snippets.info.type_notice')),
 
                                     Forms\Components\Hidden::make($contentFieldName)->default(null),
                                 ];
@@ -85,6 +90,7 @@ class SiteSnippetResource extends Resource
                     ->key('dynamic_content_section_' . uniqid())
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('key')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.key'))
                     ->required()
                     ->maxLength(255)
                     ->unique(
@@ -95,6 +101,7 @@ class SiteSnippetResource extends Resource
                     )
                     ->disabledOn('edit'),
                 Forms\Components\Select::make('type')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.type'))
                     ->options([
                         'text' => 'Plain Text',
                         'html' => 'HTML Content',
@@ -105,6 +112,7 @@ class SiteSnippetResource extends Resource
                     ->reactive()
                     ->afterStateUpdated(fn (callable $set, $state) => $set('content', null)),
                 Forms\Components\Textarea::make('description')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.description'))
                     ->maxLength(255)
                     ->columnSpanFull(),
             ]);
@@ -115,10 +123,12 @@ class SiteSnippetResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('description')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.description'))
                     ->limit(255)
                     ->tooltip(fn ($record) => $record->description)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('content')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.content'))
                     ->formatStateUsing(function (?string $state, SiteSnippet $record): string {
                         if ($record->type === 'image') {
                             if (is_string($state) && ! empty($state)) {
@@ -135,12 +145,15 @@ class SiteSnippetResource extends Resource
                     ->html(fn (SiteSnippet $record) => $record->type === 'image')
                     ->tooltip(fn (SiteSnippet $record) => $record->content),
                 Tables\Columns\TextColumn::make('key')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.key'))
                     ->copyable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('type')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.type'))
                     ->badge()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label(__('filament-site-snippets::filament-site-snippets.field.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
