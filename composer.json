@@ -1,8 +1,9 @@
 {
     "name": "rectitude-open/filament-site-snippets",
-    "description": "This is my package filament-site-snippets",
+    "description": "A Filament plugin for easily managing content snippets like text, rich text, or images.",
     "keywords": [
-        "filament",
+        "snippets",
+        "laravel",
         "filament plugin"
     ],
     "homepage": "https://github.com/rectitude-open/filament-site-snippets",
@@ -13,8 +14,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Rectitude Open",
-            "email": "open@rectitude.dev",
+            "name": "Aspirant Zhang",
+            "email": "admin@aspirantzhang.com",
             "role": "Developer"
         }
     ],
