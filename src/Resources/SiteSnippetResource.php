@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentSiteSnippets\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -47,6 +48,7 @@ class SiteSnippetResource extends Resource
 
     public static function form(Form $form): Form
     {
+
         return $form
             ->schema([
                 Forms\Components\Group::make()
@@ -63,12 +65,17 @@ class SiteSnippetResource extends Resource
                                         ->autosize(),
                                 ];
                             case 'html':
-                                return [
-                                    Forms\Components\RichEditor::make($contentFieldName)
-                                        ->label(__('filament-site-snippets::filament-site-snippets.field.html'))
-                                        ->maxLength(65535)
-                                        ->required(),
-                                ];
+                                $editorClass = config('filament-site-snippets.editor_component_class', RichEditor::class);
+                                $editorComponent = $editorClass::make($contentFieldName)
+                                    ->label(__('filament-site-snippets::filament-site-snippets.field.html'))
+                                    ->fileAttachmentsDisk('public')
+                                    ->fileAttachmentsDirectory('uploads')
+                                    ->fileAttachmentsVisibility('public')
+                                    ->columnSpan('full')
+                                    ->maxLength(65535)
+                                    ->required();
+
+                                return [$editorComponent];
                             case 'image':
                                 return [
                                     Forms\Components\FileUpload::make($contentFieldName)
