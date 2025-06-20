@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.3.0...v1.4.0) (2025-06-20)
+
+
+### Features
+
+* enhance SiteSnippetResource to use configurable RichEditor component ([1363970](https://github.com/rectitude-open/filament-site-snippets/commit/1363970f37a14f75d91266e45dca1a3b93cec921))
+
 ## [1.3.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.2.0...v1.3.0) (2025-06-03)
 
 
