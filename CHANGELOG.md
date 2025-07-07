@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.4.0...v1.5.0) (2025-07-07)
+
+
+### Features
+
+* add helper functions ([570fd0b](https://github.com/rectitude-open/filament-site-snippets/commit/570fd0bc53d82fc7b7df80e8b90d911a196a08f4))
+
 ## [1.4.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.3.0...v1.4.0) (2025-06-20)
 
 
