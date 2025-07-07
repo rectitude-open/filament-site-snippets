@@ -37,6 +37,9 @@
         "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
             "RectitudeOpen\\FilamentSiteSnippets\\": "src/",
             "RectitudeOpen\\FilamentSiteSnippets\\Database\\Factories\\": "database/factories/"
