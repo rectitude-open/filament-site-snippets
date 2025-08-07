@@ -46,6 +46,11 @@ class SiteSnippetResource extends Resource
         return __('filament-site-snippets::filament-site-snippets.nav.group');
     }
 
+    public static function getModelLabel(): string
+    {
+        return __('filament-site-snippets::filament-site-snippets.resource.label');
+    }
+
     public static function form(Form $form): Form
     {
 
