@@ -3,15 +3,24 @@
 declare(strict_types=1);
 
 return [
-    'nav.label' => 'Cuplikan Situs',
-    'nav.group' => 'Konten',
-    'field.plain_text' => 'Konten (Teks Biasa)',
-    'field.html' => 'Konten (HTML)',
-    'field.image' => 'Berkas Gambar',
-    'info.type_notice' => 'Silakan pilih jenis konten untuk memasukkan konten.',
-    'field.key' => 'Kunci Cuplikan',
-    'field.type' => 'Jenis Konten',
-    'field.description' => 'Deskripsi',
-    'field.content' => 'Konten',
-    'field.updated_at' => 'Terakhir Diperbarui',
+    'nav' => [
+        'label' => 'Cuplikan Situs',
+        'group' => 'Konten',
+    ],
+    'field' => [
+        'plain_text' => 'Konten (Teks Biasa)',
+        'html' => 'Konten (HTML)',
+        'image' => 'Berkas Gambar',
+        'key' => 'Kunci Cuplikan',
+        'type' => 'Jenis Konten',
+        'description' => 'Deskripsi',
+        'content' => 'Konten',
+        'updated_at' => 'Terakhir Diperbarui',
+    ],
+    'info' => [
+        'type_notice' => 'Silakan pilih jenis konten untuk memasukkan konten.',
+    ],
+    'resource' => [
+        'label' => 'Cuplikan Situs',
+    ],
 ];

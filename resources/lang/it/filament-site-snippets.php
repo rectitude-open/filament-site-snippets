@@ -3,15 +3,24 @@
 declare(strict_types=1);
 
 return [
-    'nav.label' => 'Frammenti del sito',
-    'nav.group' => 'Contenuto',
-    'field.plain_text' => 'Contenuto (Testo semplice)',
-    'field.html' => 'Contenuto (HTML)',
-    'field.image' => 'File immagine',
-    'info.type_notice' => 'Seleziona un tipo di contenuto per inserire il contenuto.',
-    'field.key' => 'Chiave frammento',
-    'field.type' => 'Tipo di contenuto',
-    'field.description' => 'Descrizione',
-    'field.content' => 'Contenuto',
-    'field.updated_at' => 'Ultimo aggiornamento',
+    'nav' => [
+        'label' => 'Snippet del sito',
+        'group' => 'Contenuto',
+    ],
+    'field' => [
+        'plain_text' => 'Contenuto (Testo semplice)',
+        'html' => 'Contenuto (HTML)',
+        'image' => 'File immagine',
+        'key' => 'Chiave dello snippet',
+        'type' => 'Tipo di contenuto',
+        'description' => 'Descrizione',
+        'content' => 'Contenuto',
+        'updated_at' => 'Ultimo aggiornamento',
+    ],
+    'info' => [
+        'type_notice' => 'Seleziona un tipo di contenuto per inserire il contenuto.',
+    ],
+    'resource' => [
+        'label' => 'Snippet del sito',
+    ],
 ];

@@ -3,15 +3,24 @@
 declare(strict_types=1);
 
 return [
-    'nav.label' => 'Oldal kivonatok',
-    'nav.group' => 'Tartalom',
-    'field.plain_text' => 'Tartalom (sima szöveg)',
-    'field.html' => 'Tartalom (HTML)',
-    'field.image' => 'Képfájl',
-    'info.type_notice' => 'Kérjük, válasszon tartalomtípust a tartalom megadásához.',
-    'field.key' => 'Kivonat kulcs',
-    'field.type' => 'Tartalom típusa',
-    'field.description' => 'Leírás',
-    'field.content' => 'Tartalom',
-    'field.updated_at' => 'Utoljára frissítve',
+    'nav' => [
+        'label' => 'Oldal kivonatok',
+        'group' => 'Tartalom',
+    ],
+    'field' => [
+        'plain_text' => 'Tartalom (sima szöveg)',
+        'html' => 'Tartalom (HTML)',
+        'image' => 'Képfájl',
+        'key' => 'Kivonat kulcs',
+        'type' => 'Tartalom típusa',
+        'description' => 'Leírás',
+        'content' => 'Tartalom',
+        'updated_at' => 'Utoljára frissítve',
+    ],
+    'info' => [
+        'type_notice' => 'Kérjük, válasszon tartalomtípust a tartalom megadásához.',
+    ],
+    'resource' => [
+        'label' => 'Oldal kivonat',
+    ],
 ];

@@ -3,15 +3,24 @@
 declare(strict_types=1);
 
 return [
-    'nav.label' => 'Kurteyên malperê',
-    'nav.group' => 'Naverok',
-    'field.plain_text' => 'Naverok (nivîsê rast)',
-    'field.html' => 'Naverok (HTML)',
-    'field.image' => 'Pelê wêne',
-    'info.type_notice' => 'Ji kerema xwe cureya naverokê hilbijêrin da ku naverokê binivîsin.',
-    'field.key' => 'Mifteya kurteyê',
-    'field.type' => 'Cureya naverokê',
-    'field.description' => 'Terîf',
-    'field.content' => 'Naverok',
-    'field.updated_at' => 'Dawî nûvekirin',
+    'nav' => [
+        'label' => 'Parçeyên Malperê',
+        'group' => 'Naverok',
+    ],
+    'field' => [
+        'plain_text' => 'Naverok (Nivîsê Rast)',
+        'html' => 'Naverok (HTML)',
+        'image' => 'Pelê Wêne',
+        'key' => 'Mifteya Parçe',
+        'type' => 'Cureya Naverokê',
+        'description' => 'Terîf',
+        'content' => 'Naverok',
+        'updated_at' => 'Dawî Nûvekirin',
+    ],
+    'info' => [
+        'type_notice' => 'Ji kerema xwe cureya naverokê hilbijêrin da ku naverokê binivîsin.',
+    ],
+    'resource' => [
+        'label' => 'Parçeya Malperê',
+    ],
 ];
