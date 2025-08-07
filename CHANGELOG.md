@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.5.0...v1.6.0) (2025-08-07)
+
+
+### Features
+
+* add getModelLabel method to SiteSnippetResource ([f013375](https://github.com/rectitude-open/filament-site-snippets/commit/f01337583de44df42d99213df4f6ae5c407adbd2))
+* refactor translation file format and add more translations ([d6a0e32](https://github.com/rectitude-open/filament-site-snippets/commit/d6a0e32880ca1f48f44c6587947eb31ba0e41a91))
+
 ## [1.5.0](https://github.com/rectitude-open/filament-site-snippets/compare/v1.4.0...v1.5.0) (2025-07-07)
 
 
